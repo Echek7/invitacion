@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f7f6f2; /* marfil elegante */
+  color: #222;
+  scroll-behavior: smooth;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container {
+  padding: 120px 10%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*-- Transitions blocks--*/
+html, body {
+  scroll-behavior: smooth;
+}
+
+.section {
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.section.enter {
+  opacity: 0;
+  transform: translateY(80px);
+}
+
+.section.enter.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

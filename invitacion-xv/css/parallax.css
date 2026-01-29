@@ -1,0 +1,18 @@
+.parallax {
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.divider-1 {
+  background-image: url("../images/divider-1.jpg");
+}
+
+.divider-2 {
+  background-image: url("../images/divider-2.jpg");
+}
+
+.divider-3 {
+  background-image: url("../images/divider-3.jpg");
+}

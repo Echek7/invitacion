@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quinceañera</title>
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-vx..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-vx..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <!-- CSS base -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Reproductor minimalista -->
+<div class="music-player" id="music-player">
+  <button id="music-toggle" aria-label="Reproducir / Pausar">▶</button>
+  <audio id="bg-music" loop>
+    <source src="assets/audio/mymusic.mp3" type="audio/mpeg">
+
+    Tu navegador no soporta audio.
+  </audio>
+</div>
+
+  <!-- HERO / HEADER -->
+  <header class="section hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-texture"></div>
+
+    <div class="hero-content">
+      <p class="hero-xv">XV</p>
+      <h1 class="hero-title">
+        <span class="line top-line"></span>
+        <span class="name-text">Mina</span>
+        <span class="line bottom-line"></span>
+      </h1>
+      <div class="hero-subtitle">
+        <span class="hero-month">FEB</span>
+        <span class="hero-day">28</span>
+        <span class="hero-year">2026</span>
+      </div>
+
+      <a href="#rsvp" class="btn-rsvp">
+        <span class="btn-frame frame-a"></span>
+        <span class="btn-frame frame-b"></span>
+        <span class="btn-label">RSVP</span>
+      </a>
+    </div>
+
+    <!-- Divisor inferior -->
+  <div class="section-cut-diagonal cut-bottom">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon points="0,0 100,100 100,0" fill="#f7f6f2"/>
+    </svg>
+  </div>
+  </header>
+
+  <!-- SECCIÓN INTRO -->
+  <section class="section section-intro" id="intro">
+    <div class="intro-portrait">
+      <div class="portrait-image">
+        <img src="assets/images/section-1/portrait.webp" alt="Mina Quinceañera">
+        <div class="portrait-hover-frame"></div>
+      </div>
+    </div>
+
+    <div class="intro-wrapper">
+      <div class="about-us-desc col-lg-8 offset-lg-2 visible" data-animation-direction="from-bottom" data-animation-delay="300">
+        <h3>XV años Mina</h3>
+        <p>Nos encantaría compartir contigo este momento tan especial. Una celebración única llena de emociones, música y recuerdos que quedarán para siempre.</p>
+
+        <div class="countdown">
+          <div class="count-item">
+            <span id="days" class="count-number">00</span>
+            <span class="count-label">Días</span>
+          </div>
+          <div class="count-item">
+            <span id="hours" class="count-number">00</span>
+            <span class="count-label">Horas</span>
+          </div>
+          <div class="count-item">
+            <span id="minutes" class="count-number">00</span>
+            <span class="count-label">Minutos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Corte inferior -->
+  </section>
+
+  <!-- Las demás secciones -->
+
+  <!-- itinerario y mapa -->
+  
+  <section class="section section-itinerary parallax" id="itinerario">
+   
+    <div class="parallax-bg"></div>
+    <div class="parallax-overlay"></div>
+    <div class="parallax-texture"></div>
+    <div class="section-content itinerary-content">
+  <div class="itinerary-card">
+  <div class="glass-base"></div>
+  <div class="glass-light"></div>
+
+  <!-- Título centrado -->
+  <h2 class="itinerary-title revel">Itinerario</h2>
+
+  <!-- Lista de eventos -->
+  <ul class="itinerary-list">
+    <li>
+      <span class="time">20:00</span> - 
+      <span class="event">Ceremonia</span> 
+      <i class="fa-solid fa-church"></i>
+    </li>
+    <li>
+      <span class="time">21:00</span> - 
+      <span class="event">Recepción</span> 
+      <i class="fa-solid fa-clipboard-list"></i>
+    </li>
+    <li>
+      <span class="time">21:30</span> - 
+      <span class="event">Cena</span> 
+      <i class="fa-solid fa-utensils"></i>
+    </li>
+    <li>
+      <span class="time">22:00</span> - 
+      <span class="event">Brindis</span> 
+      <i class="fa-solid fa-glass-cheers"></i>
+    </li>
+    <li>
+      <span class="time">22:15</span> - 
+      <span class="event">Vals</span> 
+      <i class="fa-solid fa-heart"></i>
+    </li>
+    <li>
+      <span class="time">22:50</span> - 
+      <span class="event">Baile</span> 
+      <i class="fa-solid fa-music"></i>
+    </li>
+  </ul>
+
+  <!-- LUGAR DEL EVENTO -->
+<p class="itinerary-location">
+  Ceremonia y Recepción <br>
+  <strong>Centro de Convenciones San Luis Potosí</strong> <br>
+  <em>(Ceremonia en la "Sala Las Estaciones")</em>
+  Benigno Arriaga 610, De Tequisquiapan, 78250 San Luis Potosí, S.L.P.<br>
+  
+</p>
+
+  <!-- BOTON -->
+  <a href="https://www.google.com/maps/search/?api=1&query=Centro+Potosino+de+Convenciones+San+Luis+Potos%C3%AD,+SLP,+Mexico" 
+  target="_blank"
+   class="btn-rsvp btn-map">
+
+  <span class="btn-label">Ver mapa</span>
+
+  <span class="btn-frame frame-a"></span>
+  <span class="btn-frame frame-b"></span>
+
+</a>
+
+</div>
+
+    <div class="section-cut-diagonal cut-bottom">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <polygon points="0,0 100,100 100,0" fill="#f7f6f2"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Section Gifts-->
+
+  <section class="section section-gifts" id="gifts">
+    <div class="section-content">
+      <div class="gifts-container"></div>
+      <div class="gifts-wrapper">
+
+  <!-- DRESS CODE -->
+  <div class="gifts-dresscode">
+    <h3>Dress Code</h3>
+    <p class="dresscode-text revel">Formal · Colores pastel<br><span>(excepto rosa)</span></p>
+
+  <div class="dresscode-icons revel">
+    <div class="dresscode-icon revel">
+      <img src="assets/svg/traje-icon.svg" alt="Traje formal">
+    </div>
+
+  <div class="dresscode-icon">
+    <img src="assets/svg/vestido-icon.svg" alt="Vestido formal">
+  </div>
+</div>
+  </div>
+
+  <!-- OBSEQUIOS -->
+  <div class="gifts-info">
+    <h3>Obsequios</h3>
+    <p class="gifts-subtitle">Lluvia de sobres</p>
+
+    <!-- BOTÓN NEELA -->
+    <button class="btn-rsvp btn-gifts-toggle" type="button">
+      <span class="btn-frame frame-a"></span>
+      <span class="btn-frame frame-b"></span>
+      <span class="btn-label">Ver detalles</span>
+    </button>
+
+    <!-- TARJETA OCULTA -->
+    <div class="gifts-card" hidden>
+      <div class="glass-light"></div>
+      <p>
+        Agradecemos profundamente su presencia en este día tan especial.
+        Si desean hacernos un obsequio, con mucho cariño les compartimos
+        que la lluvia de sobres será bienvenida como muestra de su afecto
+        y buenos deseos.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+    </div>
+    <div class="section-cut-diagonal cut-bottom">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <polygon points="0,0 100,100 100,0" fill="#f7f6f2"/>
+      </svg>
+    </div>
+  </section>
+
+  <!--RSVP-->
+
+ <section class="section section-rsvp parallax" id="rsvp">
+  <div class="parallax-bg"></div>
+  <div class="parallax-overlay dark"></div>
+   <div class="parallax-texture"></div>
+
+  <div class="section-content center">
+    <div class="paper-card reveal">
+      <div class="glass-base"></div>
+      <div class="glass-light"></div>
+      <h2>Confirmación de asistencia</h2>
+      <p>
+        Será un honor contar con tu presencia.<br>
+        Confirma tu asistencia por favor.
+      </p>
+
+      <a
+  class="btn-rsvp"
+  href="https://wa.me/524444228933?text=Hola,%20confirmo%20mi%20asistencia%20a%20la%20boda."
+  target="_blank">
+  <span class="btn-frame frame-a"></span>
+  <span class="btn-frame frame-b"></span>
+  <span class="btn-label">Confirmar por WhatsApp</span>
+</a>
+
+      <button class="btn-rsvp btn-form-toggle" type="button">
+  <span class="btn-frame frame-a"></span>
+  <span class="btn-frame frame-b"></span>
+  <span class="btn-label">Prefiero llenar un formulario</span>
+</button>
+
+      <form class="rsvp-form">
+        <input type="text" placeholder="Nombre completo" required>
+        <select required>
+          <option value="">¿Asistirás?</option>
+          <option>Sí asistiré</option>
+          <option>No podré asistir</option>
+        </select>
+        <input type="number" placeholder="Número de personas" min="1">
+        <button type="submit" class="btn-primary">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+  <!--Form Envío-->
+  <script>
+const form = document.querySelector('.rsvp-form');
+form.addEventListener('submit', function(e) {
+  e.preventDefault(); // evita que recargue la página
+
+  // Obtener valores
+  const nombre = encodeURIComponent(form.nombre.value);
+  const asistencia = encodeURIComponent(form.asistencia.value);
+  const personas = encodeURIComponent(form.personas.value || "1");
+
+  // Número de WhatsApp (pon tu número aquí, con código país, sin +)
+  const whatsappNumber = "524444228933";
+
+  // Crear mensaje
+  const mensaje = `Hola, confirmo mi asistencia a la quinceañera.\nNombre: ${nombre}\nAsistencia: ${asistencia}\nNúmero de personas: ${personas}`;
+
+  // Abrir WhatsApp
+  window.open(`https://wa.me/${whatsappNumber}?text=${mensaje}`, "_blank");
+});
+</script>
+
+  <div class="section-cut-diagonal cut-bottom">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon points="0,0 100,100 100,0" fill="#f7f6f2"/>
+    </svg>
+  </div>
+
+</section>
+
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+  <p>Gracias, con cariño y afecto los esperamos</p>
+  <a href="#hero" class="scroll-top" aria-label="Ir al inicio">
+    &#8679;
+  </a>
+</footer>
+
+
+
+  <script src="js/main.js"></script>
+  <!-- <script src="js/animations.js"></script> -->
+  <script src="js/countdown.js"></script>
+</body>
+</html>

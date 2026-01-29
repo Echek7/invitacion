@@ -1,0 +1,125 @@
+/* =====================================
+   BOTÓN RSVP — NEELA LOGIC REAL
+   (ingeniería inversa, no clon)
+===================================== */
+
+.btn-rsvp {
+  --offset: 8px;
+  --border-size: 1px;
+
+  position: relative;
+  display: inline-block;
+  padding: 16px 48px;
+  margin-top: 48px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+  background: transparent;
+  border: var(--border-size) solid currentColor;
+
+  cursor: pointer;
+  text-decoration: none;
+  overflow: visible;
+}
+
+/* TEXTO */
+.btn-label {
+  position: relative;
+  z-index: 3;
+}
+
+/* BASE FRAMES */
+.btn-frame {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  pointer-events: none;
+  transition: transform .8s cubic-bezier(.2,.75,.25,.9);
+  z-index: 1;
+}
+
+/* ===============================
+   H-LINES (horizontales)
+=============================== */
+.frame-a {
+  top: calc(var(--border-size) * -1);
+  bottom: calc(var(--border-size) * -1);
+
+  border-top: var(--border-size) solid currentColor;
+  border-bottom: var(--border-size) solid currentColor;
+
+  transform-origin: center;
+}
+
+.frame-a::before {
+  content: "";
+  position: absolute;
+
+  top: calc(var(--offset) * -1);
+  bottom: calc(var(--offset) * -1);
+  left: var(--offset);
+  right: var(--offset);
+
+  border-top: inherit;
+  border-bottom: inherit;
+}
+
+/* ===============================
+   V-LINES (verticales)
+=============================== */
+.frame-b {
+  left: calc(var(--border-size) * -1);
+  right: calc(var(--border-size) * -1);
+
+  border-left: var(--border-size) solid currentColor;
+  border-right: var(--border-size) solid currentColor;
+
+  transform-origin: center;
+}
+
+.frame-b::before {
+  content: "";
+  position: absolute;
+
+  top: var(--offset);
+  bottom: var(--offset);
+  left: calc(var(--offset) * -1);
+  right: calc(var(--offset) * -1);
+
+  border-left: inherit;
+  border-right: inherit;
+}
+
+/* ===============================
+   HOVER — DESAPARICIÓN NEELA
+=============================== */
+.btn-rsvp:hover .frame-a {
+  transform: scaleX(0);
+}
+
+.btn-rsvp:hover .frame-b {
+  transform: scaleY(0);
+}
+/* ===============================
+   HOVER — TRANSPARENCIA SUTIL
+=============================== */
+.btn-rsvp::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.08);
+  opacity: 0;
+  transition: opacity .6s cubic-bezier(.2,.75,.25,.9);
+  z-index: 0;
+}
+
+.btn-rsvp:hover::after {
+  opacity: 1;
+}
