@@ -268,34 +268,61 @@
 
       <form class="rsvp-form">
         <input type="text" placeholder="Nombre completo" required>
-        <select required>
+        <select name="asistencia" required>
           <option value="">¿Asistirás?</option>
-          <option>Sí asistiré</option>
-          <option>No podré asistir</option>
+          <option value="si">Sí asistiré</option>
+          <option value="no">No podré asistir</option>
         </select>
-        <input type="number" placeholder="Número de personas" min="1">
+        <input type="number"name="personas" placeholder="Número de personas" min="1">
         <button type="submit" class="btn-primary">Enviar</button>
-      </form>
+      </form> <br>
+      <!-- MENSAJE DE ÉXITO (AQUÍ VA) -->
+  <p class="rsvp-success">
+    Gracias por confirmar 💛<br>
+    Nos vemos muy pronto.
+  </p>
     </div>
   </div>
 
   <!--Form Envío-->
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const form = document.querySelector('.rsvp-form');
-  form.addEventListener('submit', function(e) {
-    e.preventDefault(); 
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const form = document.querySelector(".rsvp-form");
+  const success = document.querySelector(".rsvp-success");
+  const toggleBtn = document.querySelector(".btn-form-toggle");
+
+  toggleBtn.addEventListener("click", () => {
+    form.classList.add("active");
+    toggleBtn.style.display = "none";
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
     const nombre = encodeURIComponent(form.nombre.value);
     const asistencia = encodeURIComponent(form.asistencia.value);
     const personas = encodeURIComponent(form.personas.value || "1");
+
     const whatsappNumber = "524444228933";
-    const mensaje = `Hola, confirmo mi asistencia a la quinceañera.\nNombre: ${nombre}\nAsistencia: ${asistencia}\nNúmero de personas: ${personas}`;
-    window.open(`https://wa.me/${whatsappNumber}?text=${mensaje}`, "_blank");
-    form.reset();
+    const mensaje =
+  `Hola, confirmo mi asistencia a la quinceañera.%0A%0A` +
+  `Nombre: ${nombre}%0A` +
+  `Asistencia: ${asistencia}%0A` +
+  `Personas: ${personas}`;
+
+
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${mensaje}`,
+      "_blank"
+    );
+
+    form.style.display = "none";
+    success.classList.add("active");
   });
+
 });
 </script>
-
 
   <div class="section-cut-diagonal cut-bottom">
     <svg viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -322,6 +349,7 @@ document.addEventListener("DOMContentLoaded", function() {
   <script src="js/countdown.js"></script>
 </body>
 </html>
+
 
 
 
