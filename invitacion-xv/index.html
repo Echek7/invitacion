@@ -280,26 +280,22 @@
   </div>
 
   <!--Form Envío-->
-  <script>
-const form = document.querySelector('.rsvp-form');
-form.addEventListener('submit', function(e) {
-  e.preventDefault(); // evita que recargue la página
-
-  // Obtener valores
-  const nombre = encodeURIComponent(form.nombre.value);
-  const asistencia = encodeURIComponent(form.asistencia.value);
-  const personas = encodeURIComponent(form.personas.value || "1");
-
-  // Número de WhatsApp (pon tu número aquí, con código país, sin +)
-  const whatsappNumber = "524444228933";
-
-  // Crear mensaje
-  const mensaje = `Hola, confirmo mi asistencia a la quinceañera.\nNombre: ${nombre}\nAsistencia: ${asistencia}\nNúmero de personas: ${personas}`;
-
-  // Abrir WhatsApp
-  window.open(`https://wa.me/${whatsappNumber}?text=${mensaje}`, "_blank");
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.querySelector('.rsvp-form');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault(); 
+    const nombre = encodeURIComponent(form.nombre.value);
+    const asistencia = encodeURIComponent(form.asistencia.value);
+    const personas = encodeURIComponent(form.personas.value || "1");
+    const whatsappNumber = "524444228933";
+    const mensaje = `Hola, confirmo mi asistencia a la quinceañera.\nNombre: ${nombre}\nAsistencia: ${asistencia}\nNúmero de personas: ${personas}`;
+    window.open(`https://wa.me/${whatsappNumber}?text=${mensaje}`, "_blank");
+    form.reset();
+  });
 });
 </script>
+
 
   <div class="section-cut-diagonal cut-bottom">
     <svg viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -326,6 +322,7 @@ form.addEventListener('submit', function(e) {
   <script src="js/countdown.js"></script>
 </body>
 </html>
+
 
 
 
