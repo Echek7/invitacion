@@ -13,7 +13,7 @@
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../assets/images/hero/hero.webp');
+  background-image: url('../assets/images/hero/hero-img3.webp');
   background-size: cover;
   background-position: center;
   z-index: 1;
@@ -155,3 +155,4 @@
   scroll-margin-top: 1px;
   transition: background-color 0.8s ease;
 }
+
