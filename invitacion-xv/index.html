@@ -267,7 +267,7 @@
 </button>
 
       <form class="rsvp-form">
-        <input type="text" placeholder="Nombre completo" required>
+        <input type="text" name="nombre" placeholder="Nombre completo" required>
         <select name="asistencia" required>
           <option value="">¿Asistirás?</option>
           <option value="si">Sí asistiré</option>
@@ -292,10 +292,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const success = document.querySelector(".rsvp-success");
   const toggleBtn = document.querySelector(".btn-form-toggle");
 
-  toggleBtn.addEventListener("click", () => {
-    form.classList.add("active");
-    toggleBtn.style.display = "none";
-  });
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      form.classList.add("active");
+      toggleBtn.style.display = "none";
+    });
+  }
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -305,12 +307,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const personas = encodeURIComponent(form.personas.value || "1");
 
     const whatsappNumber = "524444228933";
-    const mensaje =
-  `Hola, confirmo mi asistencia a la quinceañera.%0A%0A` +
-  `Nombre: ${nombre}%0A` +
-  `Asistencia: ${asistencia}%0A` +
-  `Personas: ${personas}`;
 
+    const mensaje =
+      `Hola, confirmo mi asistencia a la quinceañera.%0A%0A` +
+      `Nombre: ${nombre}%0A` +
+      `Asistencia: ${asistencia}%0A` +
+      `Personas: ${personas}`;
 
     window.open(
       `https://wa.me/${whatsappNumber}?text=${mensaje}`,
@@ -349,6 +351,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <script src="js/countdown.js"></script>
 </body>
 </html>
+
 
 
 
