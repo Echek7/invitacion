@@ -132,6 +132,14 @@
 /* ================================
    COUNTDOWN CRISTAL
 ================================ */
+.countdown-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333; /* Puedes cambiar al color que uses en tu hero */
+  }
 .countdown {
   display: flex;
   justify-content: center;
@@ -985,6 +993,7 @@ html {
 .music-player button:hover {
   background: rgba(255, 255, 255, 0.3);
 }
+
 
 
 
