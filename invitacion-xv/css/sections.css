@@ -994,6 +994,25 @@ html {
   background: rgba(255, 255, 255, 0.3);
 }
 
+/*==== Mensaje Gracias ====*/
+.section-rsvp .rsvp-success {
+  margin-top: 32px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .4s ease, transform .4s ease;
+}
+
+.section-rsvp .rsvp-success.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 
 
