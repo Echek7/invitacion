@@ -123,3 +123,100 @@
 .btn-rsvp:hover::after {
   opacity: 1;
 }
+
+/* ===============================
+   OBSEQUIOS — TEXTO CON MARCO NEELA
+=============================== */
+
+.gifts-lux-frame {
+  position: relative;
+  padding: 48px 40px;
+  margin-top: 32px;
+  text-align: center;
+}
+
+/* TEXTO */
+.gifts-text {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 2;
+  color: #1f1f1f;
+}
+
+/* MARCO EXTERIOR */
+.gifts-lux-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(0,0,0,0.35);
+}
+
+/* MARCO INTERIOR */
+.gifts-lux-frame::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+/* CRUCES SUPERIORES */
+.gifts-lux-frame span {
+  position: absolute;
+  background: #000;
+}
+
+/* LINEA SUPERIOR IZQUIERDA (exterior) */
+.gifts-lux-frame::before {
+  clip-path: polygon(
+    0 0, 100% 0, 100% 100%, 0 100%,
+    0 6%, 60% 6%, 60% 0
+  );
+}
+
+/* LINEA SUPERIOR DERECHA (interior) */
+.gifts-lux-frame::after {
+  clip-path: polygon(
+    40% 0, 100% 0, 100% 100%, 0 100%,
+    0 94%, 40% 94%
+  );
+}
+
+/*==== Animación Lluvia ====*/
+.gifts-lux-frame {
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.gifts-lux-frame::before,
+.gifts-lux-frame::after {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.gifts-text {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+/* ACTIVO */
+.gifts-lux-frame.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.gifts-lux-frame.visible::before {
+  opacity: 1;
+}
+
+.gifts-lux-frame.visible::after {
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+
+.gifts-lux-frame.visible .gifts-text {
+  opacity: 1;
+  transition-delay: 0.6s;
+}
