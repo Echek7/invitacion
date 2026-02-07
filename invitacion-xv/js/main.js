@@ -201,3 +201,9 @@ toggle.addEventListener('click', () => {
     toggle.textContent = '▶';
   }
 });
+
+/*=====Animacion Lluvia====
+============================*/
+document.querySelectorAll('.gifts-lux-frame').forEach(el => {
+  el.classList.add('visible');
+});
